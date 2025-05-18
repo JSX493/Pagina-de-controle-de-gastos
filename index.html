@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos-H1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Gastos</h1>
+
+        <div class="balance-summary">
+            <div class="balance-item">
+                <h2>Saldo Atual</h2>
+                <p id="balance" class="balance">R$ 0,00</p>
+            </div>
+            <div class="balance-item income-expense-summary">
+                <div class="summary-box income">
+                    <h3>Receitas</h3>
+                    <p id="income-total">R$ 0,00</p>
+                </div>
+                <div class="summary-box expense">
+                    <h3>Despesas</h3>
+                    <p id="expense-total">R$ 0,00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transactions-form">
+            <h2>Nova Transação</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" id="description" placeholder="Ex: Aluguel, Salário, Comida" required>
+                    <div class="error-message" id="description-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Valor (R$):</label>
+                    <input type="number" id="amount" placeholder="Ex: -50.00 (despesa) ou 100.00 (receita)" step="0.01" required>
+                    <div class="error-message" id="amount-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoria:</label>
+                    <select id="category" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Salário">Salário</option>
+                        <option value="Investimento">Investimento</option>
+                        <option value="Aluguel">Aluguel</option>
+                        <option value="Alimentação">Alimentação</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Contas">Contas</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                    <div class="error-message" id="category-error"></div>
+                </div>
+                <button type="submit">Adicionar Transação</button>
+            </form>
+        </div>
+
+        <div class="history-container">
+            <h2>Histórico de Transações</h2>
+            <div class="filter-group">
+                <label for="filter-category">Filtrar por Categoria:</label>
+                <select id="filter-category">
+                    <option value="all">Todas as Categorias</option>
+                    <option value="Salário">Salário</option>
+                    <option value="Investimento">Investimento</option>
+                    <option value="Aluguel">Aluguel</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Contas">Contas</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <ul id="transactions-list" class="transactions-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
